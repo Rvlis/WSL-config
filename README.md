@@ -28,3 +28,4 @@
    - 重新加载环境变量 `source /etc/profile`
    - 检查是否配置成功
    ![8](res/img/python.jpg)
+- Keep going! 🐱‍🏍
