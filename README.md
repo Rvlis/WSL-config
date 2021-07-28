@@ -26,6 +26,5 @@
    - 添加环境变量, `sudo vim /etc/profile`
    - 添加 `export PATH=/home/rvlis/anaconda3/bin:$PATH`, 其中路径替换为自己的安装路径
    - 重新加载环境变量 `source /etc/profile`
-   - 检查是否配置成功
-      ![8](res/img/python.jpg)
+   ![8](res/img/python.jpg)
 ## Keep going! 🐱‍🏍
