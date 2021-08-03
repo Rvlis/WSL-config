@@ -24,7 +24,8 @@
   </div>
 3. WSL2启动时提示参考的对象类型不支持尝试的操作（若有）
    - [解决](https://xinzsh.com/notes/WSL2-issues.html)
-   - 
+   
+
 4. 换源（若需要）
    ```
    sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
