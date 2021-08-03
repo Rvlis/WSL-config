@@ -10,7 +10,7 @@
   或
 
    ```
-   dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+   dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
    ```
 
@@ -24,6 +24,7 @@
   </div>  
 3. WSL2启动时提示参考的对象类型不支持尝试的操作（若有）
    - [解决方案](https://xinzsh.com/notes/WSL2-issues.html)
+
 4. 换源（若需要）
    ```
    sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
@@ -37,6 +38,7 @@
       <img src="./res/img/Remote-WSL.jpg" width = "80%" alt="3" align=center />
   </div> 
 6. 打开Ubuntu系统终端，输入`code .`，安装VSCode Server，安装完成后会在本地Windows系统自动打开VSCode，这时已经实现了Windows与Ubuntu子系统的连接和同步
+   
    - 若想在子系统中查看windows下的资源，windows资源都挂载在 `/mnt`路径下
   <div align="center">
       <img src="./res/img/vscode teiminal.jpg" width = "80%" alt="4" align=center />
