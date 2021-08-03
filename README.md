@@ -9,7 +9,7 @@
   </div>
   或
 
-   ```bash
+   ```
    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
    ```
@@ -23,12 +23,13 @@
       <img src="./res/img/2.png" width = "80%" alt="2" align=center />
   </div>  
 3. WSL2启动时提示参考的对象类型不支持尝试的操作（若有）
-   [解决方案](https://xinzsh.com/notes/WSL2-issues.html)
+   - [解决方案](https://xinzsh.com/notes/WSL2-issues.html)
 4. 换源（若需要）
-   ```bash
+   ```
    sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
    sudo vim /etc/apt/sources.list
    ```
+
    - 注释掉`sources.list`中的默认源
    - 添加[清华源](https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/)
 5. 打开VSCode, 安装Remote-WSL插件
@@ -42,8 +43,12 @@
   </div> 
 7. 子系统安装Anaconda
    - Windows系统中下载[anaconda](https://www.anaconda.com/products/individual) Linux版本
-   `cd /mnt/your/path/`
-   `bash Anaconda3-xxxx.xx-Linux-x86_64.sh`
+   
+   ```
+   cd /mnt/your/path/
+   bash Anaconda3-xxxx.xx-Linux-x86_64.sh
+   ```
+
    - 在安装过程中，记住安装路径，后续将这个路径加入环境变量，其余一路yes就可
    - 添加环境变量, `sudo vim /etc/profile`
    - 添加 `export PATH=/home/rvlis/anaconda3/bin:$PATH`, 其中路径替换为自己的安装路径
