@@ -22,8 +22,7 @@
   <div align="center">
       <img src="./res/img/2.png" width = "80%" alt="2" align=center />
   </div>  
-3. WSL2启动时提示参考的对象类型不支持尝试的操作（若有）
-   - [解决方案](https://xinzsh.com/notes/WSL2-issues.html)
+3. [WSL2启动时提示参考的对象类型不支持尝试的操作（若有）](https://xinzsh.com/notes/WSL2-issues.html)
 
 4. 换源（若需要）
    ```
@@ -45,7 +44,7 @@
   <div align="center">
       <img src="./res/img/vscode teiminal.jpg" width = "80%" alt="4" align=center />
   </div>
-
+  
 7. 子系统安装Anaconda
    - Windows系统中下载[anaconda](https://www.anaconda.com/products/individual) Linux版本
    
