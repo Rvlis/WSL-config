@@ -33,16 +33,19 @@
 
    - 注释掉`sources.list`中的默认源
    - 添加[清华源](https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/)
+   
 5. 打开VSCode, 安装Remote-WSL插件
   <div align="center">
       <img src="./res/img/Remote-WSL.jpg" width = "80%" alt="3" align=center />
-  </div> 
+  </div>
+
 6. 打开Ubuntu系统终端，输入`code .`，安装VSCode Server，安装完成后会在本地Windows系统自动打开VSCode，这时已经实现了Windows与Ubuntu子系统的连接和同步
    
    - 若想在子系统中查看windows下的资源，windows资源都挂载在 `/mnt`路径下
   <div align="center">
       <img src="./res/img/vscode teiminal.jpg" width = "80%" alt="4" align=center />
-  </div> 
+  </div>
+
 7. 子系统安装Anaconda
    - Windows系统中下载[anaconda](https://www.anaconda.com/products/individual) Linux版本
    
