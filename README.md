@@ -1,6 +1,7 @@
-# WSL2-config
+# WSL2-config + cuda配置
 - [安装WSL2](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package)
 - [自定义WSL安装位置](https://zhuanlan.zhihu.com/p/263089007)
+
 ## 指定位置安装Ubuntu(18.04) + Ananconda + VSCode
 
 1. 启用WSL和虚拟机功能
@@ -56,5 +57,63 @@
    - 添加 `export PATH=/home/rvlis/anaconda3/bin:$PATH`, 其中路径替换为自己的安装路径
    - 重新加载环境变量 `source /etc/profile`
    - [Linux环境变量配置详解](https://segmentfault.com/a/1190000038313883)
+
+## WSL2中配置CUDA
+
+9. 更新wsl
+   ```bash
+   wsl.exe --update
+   ```
+   如果提示更新失败，转到 `设置` -> `更新和安全` -> `高级选项` -> `打开更新windows时接收其他Microsoft产品的更新`
+
+10. 在 __windows端__ 安装[Nvidia 驱动](https://developer.nvidia.com/cuda/wsl)
+   <div align="center">
+      <img src="./res/img/cuda-driver.jpg" width = "80%" alt="3" align=center />
+   </div>
+   <div align="center">
+      <img src="./res/img/cuda-driver-2.jpg" width = "80%" alt="3" align=center />
+   </div>
+
+11. 在 __WSL__ 中安装docker
+   ```bash
+   curl https://get.docker.com | sh
+   ```
+
+12. 在 __WSL__ 中安装 Nvida Container Toolkit
+   ```bash
+   distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+   curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+   curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+   curl -s -L https://nvidia.github.io/libnvidia-container/experimental/$distribution/libnvidia-container-experimental.list | sudo tee /etc/apt/sources.list.d/libnvidia-container-experimental.list
+   ```
+
+13. 更新apt repositories并安装Nvida runtime
+    ```bash
+    sudo apt update && sudo apt install -y nvidia-docker2
+    ```
+
+14. 重启wsl并启动docker
+    ```bash
+    sudo service docker stop
+    sudo service docker start
+    ```
+   如果启动失败，执行：
+   ```bash
+   sudo chmod 666 /var/run/docker.sock
+   ```
+15. 运行
+    ```bash
+    docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
+    ```
+
+16. 验证cuda是否安装成功
+    ```python
+    import torch
+    torch.cuda.is_available()
+    >>> True
+    ```
+    <div align="center">
+      <img src="./res/img/验证安装成功.jpg" width = "80%" alt="3" align=center />
+    </div>
 
 ## Keep going! 🐱‍🏍
